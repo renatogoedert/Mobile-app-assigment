@@ -14,7 +14,6 @@ import org.wit.placemark.views.placemarklist.PlacemarkListView
 import org.wit.placemark.models.UserModel
 
 
-
 class LoginView : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
@@ -38,9 +37,6 @@ class LoginView : AppCompatActivity() {
             email = "test",
             password = "1234"
         )
-
-        app.users.create(testUser)
-
 
         binding.loginBtn.setOnClickListener {
             val enteredUsername = binding.username.text.toString()
