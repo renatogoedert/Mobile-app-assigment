@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="3000"
+        motion:autoTransition="animateToEnd">
+       <KeyFrameSet>
+       </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/loginBtn"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="159dp"
+            android:layout_height="70dp"
+            motion:layout_constraintTop_toBottomOf="@+id/password"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="48dp"
+            android:visibility="invisible"
+            motion:layout_constraintHorizontal_bias="0.503" />
+        <Constraint
+            android:id="@+id/username"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            motion:layout_constraintTop_toBottomOf="@+id/textView"
+            android:layout_marginStart="32dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp"
+            android:visibility="invisible" />
+        <Constraint
+            android:id="@+id/textView"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintVertical_bias="0.481"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:visibility="invisible"
+            motion:layout_constraintHorizontal_bias="0.498" />
+        <Constraint
+            android:id="@+id/password"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            motion:layout_constraintTop_toBottomOf="@+id/username"
+            android:layout_marginStart="32dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="24dp"
+            android:visibility="invisible" />
+        <Constraint
+            android:id="@+id/imageView"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="160dp"
+            android:layout_height="240dp"
+            android:layout_marginBottom="84dp"
+            motion:layout_constraintBottom_toTopOf="@+id/textView"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:visibility="visible"
+            android:rotationX="-360"
+            android:rotationY="-360"
+            android:rotation="1"
+            motion:layout_constraintHorizontal_bias="0.501" />
+        <Constraint
+            motion:layout_editor_absoluteY="598dp"
+            android:layout_height="65dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="113dp"
+            android:id="@+id/button"
+            android:layout_marginEnd="68dp"
+            android:layout_marginRight="68dp"
+            motion:layout_editor_absoluteX="230dp" />
+        <Constraint
+            motion:layout_editor_absoluteY="603dp"
+            android:layout_height="70dp"
+            motion:layout_editor_absoluteX="233dp"
+            android:layout_width="159dp"
+            android:id="@+id/signinBtn"
+            android:visibility="invisible" />
+        <Constraint
+            android:layout_height="66dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="237dp"
+            android:id="@+id/signupBtn"
+            android:visibility="invisible"
+            motion:layout_constraintHorizontal_bias="0.503"
+            motion:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="644dp"
+            motion:layout_editor_absoluteY="648dp" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:layout_height="70dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="32dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="159dp"
+            motion:layout_constraintTop_toBottomOf="@+id/password"
+            android:id="@+id/loginBtn" />
+        <Constraint
+            android:layout_height="49dp"
+            android:layout_width="253dp"
+            android:id="@+id/signinBtn"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toBottomOf="@+id/loginBtn"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_editor_absoluteY="660dp" />
+        <Constraint
+            android:layout_height="55dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="112dp"
+            motion:layout_constraintHorizontal_bias="0.497"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="349dp"
+            motion:layout_constraintTop_toBottomOf="@+id/password"
+            android:id="@+id/signupBtn"
+            motion:layout_editor_absoluteY="654dp" />
+    </ConstraintSet>
+</MotionScene>
