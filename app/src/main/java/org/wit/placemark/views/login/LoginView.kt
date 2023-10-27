@@ -14,6 +14,7 @@ import org.wit.placemark.views.placemarklist.PlacemarkListView
 import org.wit.placemark.models.UserModel
 
 
+
 class LoginView : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
