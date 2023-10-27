@@ -12,6 +12,8 @@ import org.wit.placemark.main.MainApp
 import timber.log.Timber.Forest.i
 import org.wit.placemark.views.placemarklist.PlacemarkListView
 import org.wit.placemark.models.UserModel
+import org.wit.placemark.views.singin.SingInView
+
 
 
 class LoginView : AppCompatActivity() {
@@ -22,7 +24,6 @@ class LoginView : AppCompatActivity() {
 
     lateinit var username : EditText
     lateinit var password : EditText
-    lateinit var loginBtn : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,11 +33,6 @@ class LoginView : AppCompatActivity() {
         app = application as MainApp
         i("Login Activity started...")
 
-        val testUser = UserModel(
-            name = "Test",
-            email = "test",
-            password = "1234"
-        )
 
         binding.loginBtn.setOnClickListener {
             val enteredUsername = binding.username.text.toString()
@@ -44,7 +40,8 @@ class LoginView : AppCompatActivity() {
 
             val user = app.users.authenticate(enteredUsername, enteredPassword)
 
-            if (user != null) {
+
+            if (user != false) {
                 Toast.makeText(this, "Login successfully", Toast.LENGTH_LONG).show()
                 i("Login successfully")
                 val intent = Intent(this, PlacemarkListView::class.java)
@@ -53,5 +50,11 @@ class LoginView : AppCompatActivity() {
                 Toast.makeText(this, "Wrong Credentials", Toast.LENGTH_LONG).show()
             }
         }
+
+        binding.signupBtn.setOnClickListener {
+            val intent = Intent(this, SingInView::class.java)
+            startActivity(intent)
+        }
+
     }
 }
