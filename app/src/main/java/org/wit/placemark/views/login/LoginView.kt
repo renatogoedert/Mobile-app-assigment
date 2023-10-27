@@ -38,9 +38,6 @@ class LoginView : AppCompatActivity() {
             password = "1234"
         )
 
-        app.users.create(testUser)
-
-
         binding.loginBtn.setOnClickListener {
             val enteredUsername = binding.username.text.toString()
             val enteredPassword = binding.password.text.toString()
