@@ -23,6 +23,7 @@
             android:layout_marginTop="48dp"
             android:visibility="invisible"
             motion:layout_constraintHorizontal_bias="0.503" />
+
         <Constraint
             android:id="@+id/username"
             motion:layout_constraintEnd_toEndOf="parent"
@@ -45,6 +46,7 @@
             motion:layout_constraintStart_toStartOf="parent"
             android:visibility="invisible"
             motion:layout_constraintHorizontal_bias="0.498" />
+
         <Constraint
             android:id="@+id/password"
             motion:layout_constraintEnd_toEndOf="parent"
@@ -62,6 +64,7 @@
             android:layout_width="160dp"
             android:layout_height="240dp"
             android:layout_marginBottom="84dp"
+
             motion:layout_constraintBottom_toTopOf="@+id/textView"
             motion:layout_constraintStart_toStartOf="parent"
             android:visibility="visible"

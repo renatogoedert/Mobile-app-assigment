@@ -24,4 +24,7 @@
     <string name="hero_signup_text">Sing Up</string>
     <string name="signup_button_text">Sing Up</string>
     <string name="signup_text">"Don't have an account? Sign up here"</string>
+    <string name="username_login_text">Username</string>
+    <string name="password_login_text">Password</string>
+    <string name="hero_login_text">Log in</string>
 </resources>
