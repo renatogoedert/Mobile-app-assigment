@@ -11,6 +11,7 @@ import android.widget.Toast
 import org.wit.placemark.main.MainApp
 import timber.log.Timber.Forest.i
 import org.wit.placemark.views.placemarklist.PlacemarkListView
+import org.wit.placemark.models.UserModel
 
 
 class LoginView : AppCompatActivity() {
@@ -31,10 +32,22 @@ class LoginView : AppCompatActivity() {
         app = application as MainApp
         i("Login Activity started...")
 
+        val testUser = UserModel(
+            name = "Test",
+            email = "test",
+            password = "1234"
+        )
+
+        app.users.create(testUser)
 
 
-        binding.loginBtn.setOnClickListener{
-            if (binding.username.text.toString() == "user" && binding.password.text.toString() == "1234") {
+        binding.loginBtn.setOnClickListener {
+            val enteredUsername = binding.username.text.toString()
+            val enteredPassword = binding.password.text.toString()
+
+            val user = app.users.authenticate(enteredUsername, enteredPassword)
+
+            if (user != null) {
                 Toast.makeText(this, "Login successfully", Toast.LENGTH_LONG).show()
                 i("Login successfully")
                 val intent = Intent(this, PlacemarkListView::class.java)
