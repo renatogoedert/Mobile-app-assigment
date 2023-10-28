@@ -27,7 +27,6 @@ class UserJSONStore(private val context: Context) : UserStore {
     override fun authenticate(email: String, password: String): Boolean {
         val user = users.find { it.email == email  }
         return password == user?.password
-
     }
 
     override fun findAll(): MutableList<UserModel> {

@@ -15,7 +15,6 @@ import org.wit.placemark.models.UserModel
 import org.wit.placemark.views.singin.SingInView
 
 
-
 class LoginView : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
@@ -33,13 +32,19 @@ class LoginView : AppCompatActivity() {
         app = application as MainApp
         i("Login Activity started...")
 
+        val testUser = UserModel(
+            name = "Test",
+            email = "test",
+            password = "1234"
+        )
+
+        app.users.create(testUser)
 
         binding.loginBtn.setOnClickListener {
             val enteredUsername = binding.username.text.toString()
             val enteredPassword = binding.password.text.toString()
 
             val user = app.users.authenticate(enteredUsername, enteredPassword)
-
 
             if (user != false) {
                 Toast.makeText(this, "Login successfully", Toast.LENGTH_LONG).show()
@@ -55,6 +60,5 @@ class LoginView : AppCompatActivity() {
             val intent = Intent(this, SingInView::class.java)
             startActivity(intent)
         }
-
     }
 }
