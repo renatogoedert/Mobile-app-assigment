@@ -7,7 +7,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class PlacemarkModel(var id: Long = 0,
                           var title: String = "",
-                          var description: String = "",
+                          var score: Int = 0,
                           var image: Uri = Uri.EMPTY,
                           var lat : Double = 0.0,
                           var lng: Double = 0.0,

@@ -50,7 +50,7 @@ class PlacemarkJSONStore(private val context: Context) : PlacemarkStore {
         var foundPlacemark: PlacemarkModel? = placemarksList.find { p -> p.id == placemark.id }
         if (foundPlacemark != null) {
             foundPlacemark.title = placemark.title
-            foundPlacemark.description = placemark.description
+            foundPlacemark.score = placemark.score
             foundPlacemark.image = placemark.image
             foundPlacemark.lat = placemark.lat
             foundPlacemark.lng = placemark.lng
