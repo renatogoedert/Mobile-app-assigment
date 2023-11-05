@@ -14,14 +14,14 @@ class MainApp : Application() {
 
     lateinit var placemarks: PlacemarkStore
     lateinit var users: UserStore
-    lateinit var loggedUser: String
+
 
     override fun onCreate() {
         super.onCreate()
         Timber.plant(Timber.DebugTree())
         placemarks = PlacemarkJSONStore(applicationContext)
         users = UserJSONStore(applicationContext)
-        loggedUser = ""
+
         i("Placemark started")
     }
 }

@@ -37,8 +37,8 @@ class SingInView : AppCompatActivity() {
                 val newUser = UserModel(
                     name = enteredName,
                     email = enteredUsername,
-                    password = enteredPassword,
-                    placemaks = mutableListOf()
+                    password = enteredPassword
+
                 )
                 Timber.i("User: $newUser Created")
                 app.users.create(newUser)

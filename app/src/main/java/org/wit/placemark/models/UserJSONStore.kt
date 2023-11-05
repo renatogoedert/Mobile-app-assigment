@@ -8,7 +8,9 @@ import timber.log.Timber
 import java.lang.reflect.Type
 import java.util.*
 
-const val JSON_USER_FILE = "user.json"
+
+const val JSON_USER_FILE = "users.json"
+
 val userListType: Type = object : TypeToken<ArrayList<UserModel>>() {}.type
 
 fun generateRandomUserId(): Long {
@@ -29,10 +31,6 @@ class UserJSONStore(private val context: Context) : UserStore {
         return password == user?.password
     }
 
-    override fun findUserPlacemark(email: String): MutableList<PlacemarkModel> {
-        val user = users.find { it.email == email  }
-        return user!!.placemaks
-    }
 
     override fun findAll(): MutableList<UserModel> {
         return users
