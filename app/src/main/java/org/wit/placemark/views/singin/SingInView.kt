@@ -38,6 +38,7 @@ class SingInView : AppCompatActivity() {
                     name = enteredName,
                     email = enteredUsername,
                     password = enteredPassword
+
                 )
                 Timber.i("User: $newUser Created")
                 app.users.create(newUser)

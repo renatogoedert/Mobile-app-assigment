@@ -32,13 +32,6 @@ class LoginView : AppCompatActivity() {
         app = application as MainApp
         i("Login Activity started...")
 
-        val testUser = UserModel(
-            name = "Test",
-            email = "test",
-            password = "1234"
-        )
-
-        app.users.create(testUser)
 
         binding.loginBtn.setOnClickListener {
             val enteredUsername = binding.username.text.toString()
@@ -46,8 +39,10 @@ class LoginView : AppCompatActivity() {
 
             val user = app.users.authenticate(enteredUsername, enteredPassword)
 
+
             if (user != false) {
                 Toast.makeText(this, "Login successfully", Toast.LENGTH_LONG).show()
+                app.loggedUser = enteredUsername
                 i("Login successfully")
                 val intent = Intent(this, PlacemarkListView::class.java)
                 startActivity(intent)

@@ -1,15 +1,19 @@
 package org.wit.placemark.views.placemark
 
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.SeekBar
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
 import org.wit.placemark.R
 import org.wit.placemark.databinding.ActivityPlacemarkBinding
 import org.wit.placemark.models.PlacemarkModel
+import org.wit.placemark.views.camera.CameraView
 import timber.log.Timber.Forest.i
 
 class PlacemarkView : AppCompatActivity() {
@@ -29,14 +33,20 @@ class PlacemarkView : AppCompatActivity() {
 
         presenter = PlacemarkPresenter(this)
 
+
         binding.chooseImage.setOnClickListener {
-            presenter.cachePlacemark(binding.placemarkTitle.text.toString(), binding.description.text.toString())
+            presenter.cachePlacemark(binding.placemarkTitle.text.toString(), binding.scoreBar.progress)
             presenter.doSelectImage()
         }
 
         binding.placemarkLocation.setOnClickListener {
-            presenter.cachePlacemark(binding.placemarkTitle.text.toString(), binding.description.text.toString())
+            presenter.cachePlacemark(binding.placemarkTitle.text.toString(), binding.scoreBar.progress)
             presenter.doSetLocation()
+        }
+
+        binding.openCameraBtn.setOnClickListener{
+            val intent = Intent(this, CameraView::class.java)
+            startActivity(intent)
         }
     }
 
@@ -55,7 +65,7 @@ class PlacemarkView : AppCompatActivity() {
                         .show()
                 } else {
                     // presenter.cachePlacemark(binding.placemarkTitle.text.toString(), binding.description.text.toString())
-                    presenter.doAddOrSave(binding.placemarkTitle.text.toString(), binding.description.text.toString())
+                    presenter.doAddOrSave(binding.placemarkTitle.text.toString(), binding.scoreBar.progress)
                 }
             }
             R.id.item_delete -> {
@@ -70,7 +80,7 @@ class PlacemarkView : AppCompatActivity() {
 
     fun showPlacemark(placemark: PlacemarkModel) {
         binding.placemarkTitle.setText(placemark.title)
-        binding.description.setText(placemark.description)
+        binding.scoreBar.progress = placemark.score
         Picasso.get()
             .load(placemark.image)
             .into(binding.placemarkImage)
