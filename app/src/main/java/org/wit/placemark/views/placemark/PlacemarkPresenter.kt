@@ -32,9 +32,9 @@ class PlacemarkPresenter(private val view: PlacemarkView) {
         registerMapCallback()
     }
 
-    fun doAddOrSave(title: String, description: String) {
+    fun doAddOrSave(title: String, score: Int) {
         placemark.title = title
-        placemark.description = description
+        placemark.score = score
         if (edit) {
             app.placemarks.update(placemark)
         } else {
@@ -70,9 +70,9 @@ class PlacemarkPresenter(private val view: PlacemarkView) {
         mapIntentLauncher.launch(launcherIntent)
     }
 
-    fun cachePlacemark (title: String, description: String) {
+    fun cachePlacemark (title: String, score: Int) {
         placemark.title = title;
-        placemark.description = description
+        placemark.score = score
     }
 
     private fun registerImagePickerCallback() {

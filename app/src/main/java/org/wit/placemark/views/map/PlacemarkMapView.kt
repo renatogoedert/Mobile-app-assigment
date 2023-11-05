@@ -35,7 +35,6 @@ class PlacemarkMapView : AppCompatActivity() , GoogleMap.OnMarkerClickListener{
     }
     fun showPlacemark(placemark: PlacemarkModel) {
         contentBinding.currentTitle.text = placemark.title
-        contentBinding.currentDescription.text = placemark.description
         Picasso.get()
             .load(placemark.image)
             .into(contentBinding.currentImage)

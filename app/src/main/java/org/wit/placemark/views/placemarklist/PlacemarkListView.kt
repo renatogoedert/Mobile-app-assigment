@@ -11,6 +11,7 @@ import org.wit.placemark.adapters.PlacemarkListener
 import org.wit.placemark.databinding.ActivityPlacemarkListBinding
 import org.wit.placemark.main.MainApp
 import org.wit.placemark.models.PlacemarkModel
+import timber.log.Timber.Forest.i
 
 class PlacemarkListView : AppCompatActivity(), PlacemarkListener {
 
